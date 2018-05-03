@@ -18,7 +18,7 @@ void quicksort(int *a,int left,int right){
 }
 
 //归并
-void mergr(int *a,int *temp,int left,int mid,int right){
+void merge(int *a,int *temp,int left,int mid,int right){
 	int i=left,j=mid+1,k=left;
 	while(i<=mid&&j<=right)
 	  a[i]<a[j]?temp[k++]=a[i++]:temp[k++]=a[j++];
@@ -32,7 +32,7 @@ void mergesort(int *a,int *temp,int left,int right){
 	  int mid=(left+right)/2;
 	  mergesort(a,temp,left,mid);
 	  mergesort(a,temp,mid+1,right);
-	  mergr(a,temp,left,mid,right);
+	  merge(a,temp,left,mid,right);
 	}
 }
 
